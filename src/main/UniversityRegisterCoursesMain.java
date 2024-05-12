@@ -17,7 +17,7 @@ public class UniversityRegisterCoursesMain {
 		mainMenu();
 	}
 
-	private static void mainMenu() {
+	public static void mainMenu() {
 		int choiceNum = 0;
 
 		while (true) {
@@ -37,8 +37,7 @@ public class UniversityRegisterCoursesMain {
 					break;
 				case MENU_CHOICE.TRAINEE:
 					traineeMenu();
-					break;
-					
+					break;				
 				case MENU_CHOICE.EXIT:
 					System.out.println("프로그램 종료");
 					System.exit(0);;
@@ -52,7 +51,7 @@ public class UniversityRegisterCoursesMain {
 		}
 	}
 
-	private static void subjectMenu() {
+	public static void subjectMenu() {
 		int choice;
 
 		SubjectRegisterManager subjectManager = new SubjectRegisterManager();
@@ -83,7 +82,7 @@ public class UniversityRegisterCoursesMain {
 		}
 	}
 
-	private static void studentMenu() {
+	public static void studentMenu() {
 		int choice;
 
 		StudentRegisterManager studentManager = new StudentRegisterManager();
@@ -111,7 +110,7 @@ public class UniversityRegisterCoursesMain {
 		
 	}
 
-	private static void lessonMenu() {
+	public static void lessonMenu() {
 		int choice;
 
 		LessonRegisterManager lessonManager = new LessonRegisterManager();

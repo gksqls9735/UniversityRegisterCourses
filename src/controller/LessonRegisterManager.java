@@ -80,7 +80,6 @@ public class LessonRegisterManager {
 	// 과목 삭제 관리
 	public void lessonDelete() {
 		LessonDAO ld = new LessonDAO();
-		LessonVO lVo = new LessonVO();
 
 		System.out.println("과목 전체 리스트(사용중인 과목 삭제 불가)");
 		ld.getLessonTotalList();
