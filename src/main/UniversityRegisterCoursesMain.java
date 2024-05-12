@@ -23,8 +23,7 @@ public class UniversityRegisterCoursesMain {
 		while (true) {
 			try {
 				MenuViewer.mainMenuView();
-				choiceNum = MenuViewer.choice.nextInt();
-				MenuViewer.choice.nextLine();
+				choiceNum = Integer.parseInt(MenuViewer.choice.nextLine());
 
 				switch (choiceNum) {
 				case MENU_CHOICE.SUBJECT:
@@ -39,8 +38,10 @@ public class UniversityRegisterCoursesMain {
 				case MENU_CHOICE.TRAINEE:
 					traineeMenu();
 					break;
+					
 				case MENU_CHOICE.EXIT:
-					break;
+					System.out.println("프로그램 종료");
+					System.exit(0);;
 				default:
 					System.out.println("해당 메뉴 번호만 입력하세요.");
 				}
@@ -56,8 +57,7 @@ public class UniversityRegisterCoursesMain {
 
 		SubjectRegisterManager subjectManager = new SubjectRegisterManager();
 		MenuViewer.subjectMenuView();
-		choice = MenuViewer.choice.nextInt();
-		MenuViewer.choice.nextLine();
+		choice = Integer.parseInt(MenuViewer.choice.nextLine());
 
 		switch (choice) {
 		case SUBJECT_CHOICE.LIST:
@@ -88,8 +88,7 @@ public class UniversityRegisterCoursesMain {
 
 		StudentRegisterManager studentManager = new StudentRegisterManager();
 		MenuViewer.studentMenuView();
-		choice = MenuViewer.choice.nextInt();
-		MenuViewer.choice.nextLine();
+		choice = Integer.parseInt(MenuViewer.choice.nextLine());
 
 		switch (choice) {
 		case STUDENT_CHOICE.INSERT:
@@ -109,6 +108,7 @@ public class UniversityRegisterCoursesMain {
 		default:
 			System.out.println("해당 메뉴 번호만 입력하세요.");
 		}
+		
 	}
 
 	private static void lessonMenu() {
@@ -116,8 +116,7 @@ public class UniversityRegisterCoursesMain {
 
 		LessonRegisterManager lessonManager = new LessonRegisterManager();
 		MenuViewer.lessonMenuView();
-		choice = MenuViewer.choice.nextInt();
-		MenuViewer.choice.nextLine();
+		choice = Integer.parseInt(MenuViewer.choice.nextLine());
 
 		switch (choice) {
 		case LESSON_CHOICE.LIST:
@@ -148,8 +147,7 @@ public class UniversityRegisterCoursesMain {
 
 		TraineeRegisterManager traineeManager = new TraineeRegisterManager();
 		MenuViewer.traineeMenuView();
-		choice = MenuViewer.choice.nextInt();
-		MenuViewer.choice.nextLine();
+		choice = Integer.parseInt(MenuViewer.choice.nextLine());
 
 		switch (choice) {
 		case TRAINEE_CHOICE.LIST:
@@ -160,9 +158,9 @@ public class UniversityRegisterCoursesMain {
 			System.out.println();
 			traineeManager.traineeRegister();
 			break;
-		case TRAINEE_CHOICE.UPDATE:
+		case TRAINEE_CHOICE.DELETE:
 			System.out.println();
-			traineeManager.traineeUpdate();
+			traineeManager.traineeDelete();
 			break;
 		case TRAINEE_CHOICE.MAIN:
 			return;
